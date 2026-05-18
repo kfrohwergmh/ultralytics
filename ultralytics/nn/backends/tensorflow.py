@@ -142,7 +142,7 @@ class TensorFlowBackend(BaseBackend):
             h, w = im.shape[1:3]
 
             details = self.input_details[0]
-            is_int = details["dtype"] in {np.int8, np.int16}
+            is_int = details["dtype"] in {np.int8, np.int16, np.uint8, np.uint16}
 
             if is_int:
                 scale, zero_point = details["quantization"]
